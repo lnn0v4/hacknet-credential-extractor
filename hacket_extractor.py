@@ -2,7 +2,7 @@
 import requests
 import re
 import html
-import time # Importamos tiempo para darle un respiro al servidor
+import time 
 
 URL_BASE = "http://hacknet.htb"
 MIS_COOKIES = {
@@ -11,20 +11,19 @@ MIS_COOKIES = {
 }
 
 def extraer_con_reintento(identificador):
-    # Paso 1: Dar Like
+    
     requests.get(f"{URL_BASE}/like/{identificador}", cookies=MIS_COOKIES)
     
-    # Paso 2: Obtener la página
+    
     res = requests.get(f"{URL_BASE}/likes/{identificador}", cookies=MIS_COOKIES)
     
-    # Si en el texto NO aparece la palabra "QuerySet", significa que el error no saltó.
-    # Así que volvemos a dar LIKE y esperamos medio segundo.
+   
     if "QuerySet" not in res.text:
         requests.get(f"{URL_BASE}/like/{identificador}", cookies=MIS_COOKIES)
-        time.sleep(0.2) # Un pequeño descanso para que el servidor reaccione
+        time.sleep(0.2) 
         res = requests.get(f"{URL_BASE}/likes/{identificador}", cookies=MIS_COOKIES)
 
-    # Extraer los datos (igual que antes)
+    
     titulos = re.findall(r'title="([^"]*)"', res.text)
     if not titulos: return []
 
