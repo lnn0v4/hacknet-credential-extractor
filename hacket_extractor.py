@@ -15,7 +15,6 @@ def extraer_con_reintento(identificador):
     requests.get(f"{URL_BASE}/like/{identificador}", cookies=MIS_COOKIES)
     res = requests.get(f"{URL_BASE}/likes/{identificador}", cookies=MIS_COOKIES)
     
-   
     if "QuerySet" not in res.text:
         requests.get(f"{URL_BASE}/like/{identificador}", cookies=MIS_COOKIES)
         time.sleep(0.2) 
