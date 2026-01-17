@@ -1,7 +1,4 @@
 # hacknet-credential-extractor
-Script de Python para extraer credenciales del desafío Hacknet HTB .
-
-# Hacknet Credential Extractor
 
 Script en Python para extraer credenciales del desafío Hacknet (HTB) explotando una condición de carrera en el sistema de likes.
 
