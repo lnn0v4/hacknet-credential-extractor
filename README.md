@@ -9,7 +9,8 @@ Este script automatiza la extracción de credenciales aprovechando una vulnerabi
 
 [![Hacknet Credential Extractor - HTB](https://img.youtube.com/vi/37Zr8ApyuFc/0.jpg)](https://youtu.be/37Zr8ApyuFc)
 
-En este video se muestra el funcionamiento completo del script y la explotación de la condición de carrera en Hacknet.
+En este video se documenta **el desarrollo paso a paso** de un script en Python utilizado durante la resolución de la máquina **HackNet [Medium]** de Hack The Box.
+El enfoque del video está en la **lógica del código**, las **técnicas empleadas** y cómo el script permite la **extracción de credenciales** dentro de un entorno controlado.
 ## Requisitos
 
 - Python 3.x
