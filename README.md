@@ -5,7 +5,11 @@ Script en Python para extraer credenciales del desafío Hacknet (HTB) explotando
 ## Descripción
 
 Este script automatiza la extracción de credenciales aprovechando una vulnerabilidad de race condition en la funcionalidad de likes de la plataforma Hacknet HTB.
+# 🎥 Video demostración
 
+[![Hacknet Credential Extractor - HTB](https://img.youtube.com/vi/37Zr8ApyuFc/0.jpg)](https://youtu.be/37Zr8ApyuFc)
+
+En este video se muestra el funcionamiento completo del script y la explotación de la condición de carrera en Hacknet.
 ## Requisitos
 
 - Python 3.x
